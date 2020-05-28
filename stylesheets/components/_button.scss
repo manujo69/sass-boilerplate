@@ -1,3 +1,47 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+// Button-specific variables
+$button-color: $secondary-color;
+
+// … include any button-specific:
+// - mixins
+// - placeholders
+// - functions
+
+/**
+ * Buttons
+ */
+ $button-width: 150px;
+ $button-height: 60px;
+.button {
+  display: block;
+  padding: 1rem;
+  color: white;
+  @include size ($button-width, $button-height);
+  @include linear-gradient($button-color, orange, yellow, white);
+  // … etc.
+
+  /**
+   * Inlined buttons on large screens
+   */
+  @include respond-to('large') {
+    display: inline-block;
+  }
+}
+
+/**
+ * Icons within buttons
+ */
+.button > svg {
+  fill: currentcolor;
+  // … etc.
+}
+
+/**
+ * Inline button
+ */
+.button--inline {
+  display: inline-block;
+}
